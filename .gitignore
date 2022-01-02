@@ -5,3 +5,4 @@ venv
 .env
 .env.prod
 creds.json
+gcp.txt
