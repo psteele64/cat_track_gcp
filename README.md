@@ -17,15 +17,31 @@ pip install -r requirements.txt
 ### Useful commands:
 Migrations/Collect Static Files and create Admin site superuser account:
 ```bash
-docker-compose run --rm app sh -c "python manage.py migrate" (FIRST TIME CREATES TABLES FOR DRFADMIN SITE)
-docker-compose run --rm app sh -c "python manage.py makemigrations ctapi" (ONLY RUN FIRST TIME: to create migrations for ctapi app)
-docker-compose run --rm app sh -c "python manage.py makemigrations" (after updating Django models)
-docker-compose run --rm app sh -c "python manage.py migrate" (after updating models and "makemigrations"
+# for dev environment with GCP cloud SQL proxy connected to cloud db instance.
+docker-compose up -d
+docker-compose run --rm app sh -c "django-admin startproject app ." 
+docker-compose run --rm app sh -c "python3 manage.py startapp <APP_NAME>"
+
+Migrations/Collect Static Files and create Admin site superuser account:
+
+# ONLY RUN FOR INITIAL DB MIGRATION.
+docker-compose run --rm app sh -c "python manage.py migrate"
 docker-compose run --rm app sh -c "python manage.py collectstatic --no-input"
 docker compose run --rm app sh -c "python manage.py createsuperuser --username=<DESIRED_USERNAME> --email=<YOUR EMAIL>"
+
+# ONLY RUN AFTER ADDING A NEW APP #
+docker-compose run --rm app sh -c "python manage.py makemigrations <APP_NAME>"
+
+# RUN after modifying Django models or other files:
+
+docker-compose run --rm app sh -c "python manage.py makemigrations" )
+docker-compose run --rm app sh -c "python manage.py migrate"
 ```
 ### GCP and GIT specific info:
-API is deployed on Cloud Run using GIT pushes from local repository to trigger builds after code updates. 
+When ready for deployment user docker-compose up -d to test migrations, etc. 
+Dev environment is connecting to the production GCP Cloud SQL instance.
+The 'cloudbuild.yaml' file will run 'makemigrations', 'migrate, and 'collectstatic' commands during deployment to Cloud Run and 
+API is deployed on Cloud Run using GIT pushes from local repository to trigger GPC Cloud Build after code updates. Any updates to local repository will trigger rebuild once pushed to Github. 
 Local git repository folder name: 'django-gcp-cloudrun'
 GS_BUCKET_NAME=django_dev_bucket
 SQL connection for SQL_AUTH_PROXY: sodium-petal-335020:us-central1:django-dev-db
