@@ -30,3 +30,5 @@ Local git repository folder name: 'django-gcp-cloudrun'
 GS_BUCKET_NAME=django_dev_bucket
 SQL connection for SQL_AUTH_PROXY: sodium-petal-335020:us-central1:django-dev-db
 Get current URL from Cloud Run. Last known: https://ctapi-z2o35wwlva-uc.a.run.app
+
+
