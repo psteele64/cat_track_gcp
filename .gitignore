@@ -1,0 +1,7 @@
+__pycache__
+env
+venv
+*.sqlite3
+.env
+.env.prod
+creds.json
