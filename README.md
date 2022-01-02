@@ -1,17 +1,17 @@
-# Cat_track_gcp - ### My Nucamp Coding Bootcamp portfolio  project.
-### Cat Track (ctapi) is a Django REST API App to rtrack cats, vets, fosters, and medications for a small cat rescue
-
-This is my first attempt at Django REST API in Python with a Postgresql DB as the back end deployed on GCP Cloud Run. It's a Django REST API built on Django Rest Framework.
+# Cat_track_gcp - My Nucamp Coding Bootcamp portfolio  project.
+## Cat Track (ctapi) is a Django REST API App to rtrack cats, vets, fosters, and medications for a small cat rescue
+### This is my first attempt at Django REST API in Python with a Postgresql DB as the back end deployed on GCP Cloud Run. It's a Django REST API built on Django Rest Framework.
 
 https://www.django-rest-framework.org/
 
-## prerequisites:
+## PIP Prerequisites:
 Required Python packages are in requirements.txt file in the project root folder. Create a virtual python environment and install required packages:
 ```sh
 python3 -m venv env
 pip install -r requirements.txt
 ```
 ### Follow this guide for deployment to GCP Cloud Run:
+
 [Django on Google Cloud Run. In this tutorial, we will create a… | by Rahul Sharma | Medium](https://medium.com/@rahulxsharma/django-on-google-cloud-run-3f2f93ae0917)
 
 ### Useful commands:
