@@ -1,7 +1,8 @@
 # Cat Track API - GCP CLoud Run version
 ## My Nucamp Coding Bootcamp portfolio  project.
 #### Cat Track (ctapi) is a Django REST API App to track cats, vets, fosters, and medications for a small cat rescue. This is my first attempt at Django REST API in Python with a Postgresql DB as the back end deployed on GCP Cloud Run. It's a Django REST API built on Django Rest Framework. https://www.django-rest-framework.org/
-
+----
+#### Insomnia configuration included in project root. Import 'Insomnia_config.json' to Insomnia to test CRUD operations via GET , POST, PUT and DELETE
 ----
 *** Get current URL from Cloud Run ***
 Last assigned URL: https://ctapi-z2o35wwlva-uc.a.run.app
