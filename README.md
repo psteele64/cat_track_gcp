@@ -39,16 +39,28 @@ docker-compose run --rm app sh -c "python manage.py makemigrations" )
 docker-compose run --rm app sh -c "python manage.py migrate"
 ```
 -----
-### GCP and GIT specific info:
+## GCP and GIT specific notes:
 
-When ready for deployment user docker-compose up -d to test migrations, etc.
+#### To trigger a build/deploy on GPC:
 
-Dev environment is connecting to the production GCP Cloud SQL instance.
-
-The 'cloudbuild.yaml' file will run 'makemigrations', 'migrate, and 'collectstatic' commands during deployment to Cloud Run and 
-API is deployed on Cloud Run using GIT pushes from local repository to trigger GPC Cloud Build after code updates. Any updates to local repository will trigger rebuild once pushed to Github.
+Run from project root:
+```bash
+. build.sh 
+```
 ----
-Local git repository folder name: 'django-gcp-cloudrun'
+#### When ready for deployment user docker-compose up -d to test migrations, etc.
+
+#### Dev environment is connecting to the production GCP Cloud SQL instance.
+
+----
+
+The 'cloudbuild.yaml' file will run 'makemigrations', 'migrate, and 'collectstatic' commands during deployment to Cloud Run.
+
+API is deployed on Cloud Run using GIT pushes from local repository to trigger GPC Cloud Build after code updates. 
+
+Any updates to local repository will trigger rebuild once pushed to Github.
+
+----
 
 GS_BUCKET_NAME=django_dev_bucket
 
