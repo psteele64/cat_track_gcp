@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('ping/', ping, name="ping"),
     path("", include("ctapi.urls")),
+    path("", include("ctapi.urls")),
     path('api-auth/', include('rest_framework.urls')),
 ]
