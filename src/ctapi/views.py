@@ -1,12 +1,36 @@
 from rest_framework import viewsets
-
-# from .models import Foster
-# from .serializers import FosterSerializer
-
-
+from rest_framework.decorators import api_view
+from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated
+from rest_framework import status
+from django.contrib.auth import authenticate
+from django.views.decorators.csrf import csrf_exempt
+from rest_framework.authtoken.models import Token
 from .models import Foster, Cat, Vet, Medication, VetVisit, Prescription
 from .serializers import FosterSerializer, CatSerializer,VetSerializer, MedicationSerializer, VetVisitSerializer, PrescriptionSerializer 
 
+# # API for Login - for Token Based Auth
+
+# @csrf_exempt
+# @api_view(['POST'])
+# def login(request):
+#     username = request.data.get("username")
+#     password = request.data.get("password")
+#     if username is None and password is None:
+#         return Response({'error':'Please provide user & password'},
+#                         status=status.HTTP_400_BAD_REQUEST)
+    
+#     user = authenticate(username=username, password=password)
+#     if not user:
+#         return Response({'error': 'Invalid credentials'},
+#                         status=status.HTTP_404_NOT_FOUND)
+    
+#     token, _ = Token.objects.get_or_create(user=user)
+#     return Response({'token':token.key},
+#                     status=status.HTTP_200_OK)
+    
+# Viewsets for models:
+    
 class FosterViewSet(viewsets.ModelViewSet):
     
     queryset = Foster.objects.all()

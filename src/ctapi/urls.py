@@ -1,6 +1,8 @@
 from django.urls import path, include
 from rest_framework import routers
-from .views import FosterViewSet, CatViewSet, VetViewSet, MedicationViewSet, PrescriptionViewSet, VetVisitViewSet
+from .views import login, FosterViewSet, CatViewSet, VetViewSet, MedicationViewSet, PrescriptionViewSet, VetVisitViewSet
+
+from . import views
 
 # Routers defined
 router = routers.DefaultRouter()
@@ -15,7 +17,8 @@ router.register(r'vetvisits', VetVisitViewSet)
 # URL patterns defined
 urlpatterns = [
     path('api/', include(router.urls)),
-    path('', include(router.urls)),  
+    path('', include(router.urls)),
+    # path("login/", views.login),      
 ]
 
 

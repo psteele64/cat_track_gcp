@@ -55,8 +55,17 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "storages",
     "rest_framework",
+    "rest_framework.authtoken",
     "ctapi",
 ]
+
+# Added for Token Based Auth:
+
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES': [
+#         'rest_framework.authentication.TokenAuthentication', 
+#     ],
+# }
 
 MIDDLEWARE = [
     "django.middleware.common.CommonMiddleware",
@@ -86,6 +95,7 @@ TEMPLATES = [
         },
     },
 ]
+
 WSGI_APPLICATION = "app.wsgi.application"
 
 # Database
