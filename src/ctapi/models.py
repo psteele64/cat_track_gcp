@@ -13,6 +13,7 @@ import datetime
 class Foster(models.Model):
     class Meta:
         verbose_name_plural = 'fosters'
+        
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     phone_num = models.CharField(max_length=100)
@@ -92,7 +93,7 @@ class VetVisit(models.Model):
     date_visited =models.DateField()
     next_appt_date = models.DateField()
     problem = models.CharField(max_length=256, blank=True)
-    problem = models.TextField(max_length=1024, blank=True)
+  
     
     
     def __str__(self):
