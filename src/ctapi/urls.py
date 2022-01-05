@@ -1,6 +1,6 @@
 from django.urls import path, include
 from rest_framework import routers
-from .views import login, FosterViewSet, CatViewSet, VetViewSet, MedicationViewSet, PrescriptionViewSet, VetVisitViewSet
+from .views import FosterViewSet, CatViewSet, VetViewSet, MedicationViewSet, PrescriptionViewSet, VetVisitViewSet
 
 from . import views
 
