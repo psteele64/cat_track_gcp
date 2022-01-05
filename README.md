@@ -1,23 +1,25 @@
-# Cat Track API - GCP CLoud Run version
-## My Nucamp Coding Bootcamp portfolio  project.
-#### Cat Track (ctapi) is a Django REST API App to track cats, vets, fosters, and medications for a small cat rescue. This is my first attempt at Django REST API in Python with a Postgresql DB as the back end deployed on GCP Cloud Run. It's a Django REST API built on Django Rest Framework. https://www.django-rest-framework.org/
+# Cat Track API - GCP Cloud Run deployment version
+## My Nucamp Back-end, SQL and DevOps with Python boot camp portfolio project.
 ----
-#### Insomnia configuration included in project root. Import 'Insomnia_config.json' to Insomnia to test CRUD operations via GET , POST, PUT and DELETE
+### Cat Track API (ctapi) is a back-end Django REST API application to track cats, vets, fosters, and medications for a small cat rescue. 
+
+#### This is my first attempt at Django REST API in Python with a Postgresql DB as the back end deployed on GCP Cloud Run. The is API built on [Django Rest Framework](https://www.django-rest-framework.org/)
+----
+#### [Insomnia](https://insomnia.rest/download) configuration included in project root. Import 'Insomnia_config.json' to [Insomnia](https://insomnia.rest/download) to test CRUD operations via GET , POST, PUT and DELETE POST 
 ----
 *** Get current URL from Cloud Run ***
-Last assigned URL: https://ctapi-z2o35wwlva-uc.a.run.app
-
+#### Last assigned URL: https://ctapi-z2o35wwlva-uc.a.run.app
 ----
 ## PIP Prerequisites:
 Required Python packages are in requirements.txt file in the project root folder. Create a virtual python environment and install required packages:
-```sh
+```python
 python3 -m venv env
 pip install -r requirements.txt
 ```
 ----
 ### Follow this guide for deployment to GCP Cloud Run:
 
-[Django on Google Cloud Run. In this tutorial, we will create a… | by Rahul Sharma | Medium](https://medium.com/@rahulxsharma/django-on-google-cloud-run-3f2f93ae0917)
+[Django on Google Cloud Run | by Rahul Sharma | Medium](https://medium.com/@rahulxsharma/django-on-google-cloud-run-3f2f93ae0917)
 ----
 ### Useful commands:
 Migrations/Collect Static Files and create Admin site superuser account:
