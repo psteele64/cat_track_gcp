@@ -55,7 +55,6 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "storages",
     "rest_framework",
-    "rest_framework.authtoken",
     "ctapi",
 ]
 
