@@ -46,7 +46,7 @@ class Cat(models.Model):
     foster = models.ForeignKey(
         Foster,
         related_name='cats',
-        on_delete=models.CASCADE,
+        on_delete=models.SET_NULL,
         null=True, blank=True
     )
     location = models.CharField(
