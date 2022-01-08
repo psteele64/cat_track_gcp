@@ -57,7 +57,6 @@ INSTALLED_APPS = [
     "rest_framework",
     "rest_framework.authtoken",
     "ctapi",
-    "django_extensions",
 ]
 
 # Added for Token Based Auth:
