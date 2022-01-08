@@ -41,14 +41,12 @@ class Cat(models.Model):
     ("4", "4"),
     ("5", "5"),    
     ("6", "6"),
-    )
-    class Meta:
-        verbose_name_plural = 'cats'    
+    )  
     name = models.CharField(max_length=100, unique=True)
     foster = models.ForeignKey(
         Foster,
         related_name='cats',
-        on_delete=models.SET_NULL,
+        on_delete=models.CASCADE,
         null=True, blank=True
     )
     location = models.CharField(
@@ -61,6 +59,8 @@ class Cat(models.Model):
         choices = ROOM_CHOICES,
         default = 'NONE'
     )
+    class Meta:       
+        verbose_name_plural = 'cats'  
     
     def __str__(self):
         return f"{self.name}"
