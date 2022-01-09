@@ -93,8 +93,6 @@ class VetVisit(models.Model):
     date_visited =models.DateField()
     next_appt_date = models.DateField()
     problem = models.CharField(max_length=256, blank=True)
-  
-    
     
     def __str__(self):
         

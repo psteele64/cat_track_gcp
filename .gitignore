@@ -6,4 +6,5 @@ venv
 .env.prod
 creds.json
 gcp.txt
+gcp2.txt
 trigger.txt
